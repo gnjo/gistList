@@ -1051,11 +1051,11 @@ v1.2 opt
  if(!fn.q('.giststyle')){
   let css=`
 body{
- background-color:#1a1c1d;
- color:#adadad;
+ background-color:black;
+ color:#456;
  width:50rem;
  margin:2rem auto;
- font:14px/1.0 monospace;
+ font:14px/1.3 monospace;
 }
 .new,.upd{display:inline}
 li{cursor:pointer}
