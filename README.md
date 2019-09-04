@@ -15,7 +15,8 @@ fn.basic =(u,p)=>{
 script(src="https://gnjo.github.io/gistList/gistList.js")
 ```
 ```
-localStorage.setItem('macro.pwd',fn.basic('kaigetuten',pwd))
+//password localStorage save
+//localStorage.setItem('macro.pwd',fn.basic('kaigetuten',pwd))
 
 gistList('.tar',{
  main:'macro.txt'
