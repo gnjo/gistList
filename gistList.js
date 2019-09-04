@@ -1,7 +1,6 @@
 /*
 script(src="https://gnjo.github.io/use.js")
 script(src="https://gnjo.github.io/getTogist.js")
-script(src="https://gnjo.github.io/gistList/gistList.core.js?v=1.2")
 
 */
 /* script onload="use(this)" src="//gnjo.github.io/use.js?q=monocc.css"> */
