@@ -29,6 +29,4 @@ gistList('.tar',{
 ```
 
 ### develop
-```
 https://codepen.io/gnjo/pen/QWLOGEp
-```
