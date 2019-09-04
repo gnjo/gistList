@@ -1,7 +1,7 @@
 /*
 script(src="https://gnjo.github.io/use.js")
 script(src="https://gnjo.github.io/getTogist.js")
-script(src="https://gnjo.github.io/gistList/gistList.core.js")
+script(src="https://gnjo.github.io/gistList/gistList.core.js?v=1.2")
 
 */
 /* script onload="use(this)" src="//gnjo.github.io/use.js?q=monocc.css"> */
@@ -1040,6 +1040,11 @@ fn.base64url=(str,decodeflg)=>{
 })(this);
 
 /*****/
+/*hisotry
+v1.0
+v1.2 opt
+*/
+
 ;(function(root){
  if(!getTogist)return console.warn('need getTogist.js')
  ;
@@ -1079,7 +1084,7 @@ ${title}</li>
  ;
 
  function entry(_tar,opt){
-  let o=Object.assign({},{sub:'',main:'',u:'',p:'',url:'',max:50},opt)  
+  let o=Object.assign({},{sub:'',main:'',u:'',p:'',url:'',max:50,opt:''},opt)  
   ,plane=fn.q(_tar)||document.body
   ,to=getTogist(o.u,localStorage.getItem(o.p))
   ,caller=(e)=>window.open(`${o.url}?id=${e.target.id}`,'_blank')
@@ -1123,6 +1128,7 @@ ${title}</li>
    fn.q('.upd',n).onclick=upd;
    fn.a2(n,board)   
   }
+  localStorage.setItem(o.opt,JSON.stringify(opt)) //v1.2
   init();
   fn.a2(board,plane)
  }
@@ -1137,6 +1143,7 @@ gistList('.tar',{
  ,sub:'note.txt'
  ,u:'kaigetuten'
  ,p:'macro.pwd'
+ ,opt:'macro.opt'
  ,url:'https://gnjo.github.io/use.js'
  ,max:50
 })
