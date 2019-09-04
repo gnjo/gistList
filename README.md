@@ -11,6 +11,10 @@ fn.basic =(u,p)=>{
 ```
 ### usage
 ```
+//pug
+script(src="https://gnjo.github.io/gistList/gistList.js")
+```
+```
 localStorage.setItem('macro.pwd',fn.basic('kaigetuten',pwd))
 
 gistList('.tar',{
@@ -21,5 +25,9 @@ gistList('.tar',{
  ,url:'https://gnjo.github.io/gistList/edit.html'
  ,max:50
 })
+```
 
+### develop
+```
+https://codepen.io/gnjo/pen/QWLOGEp
 ```
