@@ -18,7 +18,7 @@ gistList('.tar',{
  ,sub:'note.txt'
  ,u:'kaigetuten'
  ,p:'macro.pwd'
- ,url:'https://gnjo.github.io/gistList/index.html'
+ ,url:'https://gnjo.github.io/gistList/edit.html'
  ,max:50
 })
 
