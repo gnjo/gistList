@@ -1,4 +1,52 @@
 
+;(function(root){
+ //console.log('in')
+ if(!document.body.dataset.scroll){
+  let el=document.createElement('style')
+  el.classList.add('scroll')
+  document.head.appendChild(el)
+  document.body.dataset.scroll='true';  
+ }
+ //console.log('a')
+
+ let css=`
+body{
+background:%%bg%%;
+color:%%c%%;
+}
+
+::-webkit-scrollbar-thumb {
+  background: %%c%%;
+  border-radius: 0px;
+}
+
+.hidescrollbar::-webkit-scrollbar
+,.hidescroll::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar {
+  background-color: %%bg%%;
+  width: 8px;
+}
+
+::-webkit-scrollbar-button {
+  background-color: %%bg%%;
+  height: 0px;
+  width: 0px;
+  border-radius: 0px;
+}
+`
+ 
+ function entry(bg,c){
+  let el=document.querySelector('style.scroll')
+  el.innerHTML=css.replace(/%%bg%%/g,bg).replace(/%%c%%/g,c)
+ }
+ root.scroll=entry
+})(this);
+
+//scroll('#000','#aaa')
+
 /*****/
 ;(function(root){
  /*history
@@ -173,8 +221,8 @@ fn.basic=(u,p)=>{
  if(!fn.q('.giststyle')){
   let css=`
 body{
- background-color:black;
- color:#456;
+/* background-color:black;
+ color:#456;*/
  width:50rem;
  margin:2rem auto;
  font:14px/1.3 monospace;
@@ -206,7 +254,7 @@ ${title}</li>
  ;
 
  function entry(_tar,opt){
-  let o=Object.assign({},{sub:'',main:'',u:'',p:'',url:'',max:50,opt:'',blank:false},opt)  
+  let o=Object.assign({},{sub:'',main:'',u:'',p:'',url:'',max:50,opt:'',blank:false,color:'#456',bgcolor:'#000'},opt)  
   ,plane=fn.q(_tar)||document.body
   ,to=getTogist(o.u,localStorage.getItem(o.p))
   ,caller=(e)=>window.open(`${o.url}?id=${e.target.id}&opt=${o.opt}`,opt.blank?'_blank':'')
@@ -250,6 +298,7 @@ ${title}</li>
    fn.q('.upd',n).onclick=upd;
    fn.a2(n,board)   
   }
+  scroll(opt.bgcolor,opt.color)//v1.3
   localStorage.setItem(o.opt,JSON.stringify(opt)) //v1.2
   init();
   fn.a2(board,plane)
@@ -268,6 +317,8 @@ gistList('.tar',{
  ,opt:'macro.opt'
  ,url:'https://gnjo.github.io/use.js'
  ,blank:false
+ ,color:'#456'
+ ,bgcolor:'#000'
  ,max:50
 })
 */
