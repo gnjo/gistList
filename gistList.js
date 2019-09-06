@@ -298,6 +298,7 @@ ${title}</li>
    fn.q('.upd',n).onclick=upd;
    fn.a2(n,board)   
   }
+  console.log('gistList v1.3')
   scroll(opt.bgcolor,opt.color)//v1.3
   localStorage.setItem(o.opt,JSON.stringify(opt)) //v1.2
   init();
