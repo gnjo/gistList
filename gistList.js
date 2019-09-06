@@ -206,10 +206,10 @@ ${title}</li>
  ;
 
  function entry(_tar,opt){
-  let o=Object.assign({},{sub:'',main:'',u:'',p:'',url:'',max:50,opt:''},opt)  
+  let o=Object.assign({},{sub:'',main:'',u:'',p:'',url:'',max:50,opt:'',blank:false},opt)  
   ,plane=fn.q(_tar)||document.body
   ,to=getTogist(o.u,localStorage.getItem(o.p))
-  ,caller=(e)=>window.open(`${o.url}?id=${e.target.id}&opt=${o.opt}`,'_blank')
+  ,caller=(e)=>window.open(`${o.url}?id=${e.target.id}&opt=${o.opt}`,opt.blank?'_blank':'')
   ,board=fn.i3('<ol class="index"></ol>')
 //  ,n=fn.i3(`<li style="order:1" ><label class="new">NEW </label><label class="upd">UPDATE</label></li>`)
   ,n=fn.i3(`<div style="order:1;" ><li class="new">NEW </li><li class="upd">UPDATE</li></div>`)
@@ -267,6 +267,7 @@ gistList('.tar',{
  ,p:'macro.pwd'
  ,opt:'macro.opt'
  ,url:'https://gnjo.github.io/use.js'
+ ,blank:false
  ,max:50
 })
 */
