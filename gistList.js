@@ -257,7 +257,7 @@ ${title}</li>
   let o=Object.assign({},{sub:'',main:'',u:'',p:'',url:'',max:50,opt:'',blank:false,color:'#456',bgcolor:'#000'},opt)  
   ,plane=fn.q(_tar)||document.body
   ,to=getTogist(o.u,localStorage.getItem(o.p))
-  ,caller=(e)=>window.open(`${o.url}?id=${e.target.id}&opt=${o.opt}`,o.blank?'_blank':'')
+  ,caller=(e)=>window.open(`${o.url}?id=${e.target.id}&opt=${o.opt}`,o.blank?'_blank':void 0)
   ,board=fn.i3('<ol class="index"></ol>')
 //  ,n=fn.i3(`<li style="order:1" ><label class="new">NEW </label><label class="upd">UPDATE</label></li>`)
   ,n=fn.i3(`<div style="order:1;" ><li class="new">NEW </li><li class="upd">UPDATE</li></div>`)
@@ -298,7 +298,7 @@ ${title}</li>
    fn.q('.upd',n).onclick=upd;
    fn.a2(n,board)   
   }
-  console.log('gistList v1.3')
+  console.log('gistList v1.5')
   scroll(o.bgcolor,o.color)//v1.3
   localStorage.setItem(o.opt,JSON.stringify(opt)) //v1.2
   init();
