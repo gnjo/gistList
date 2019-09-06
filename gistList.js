@@ -299,7 +299,7 @@ ${title}</li>
    fn.a2(n,board)   
   }
   console.log('gistList v1.3')
-  scroll(opt.bgcolor,opt.color)//v1.3
+  scroll(o.bgcolor,o.color)//v1.3
   localStorage.setItem(o.opt,JSON.stringify(opt)) //v1.2
   init();
   fn.a2(board,plane)
