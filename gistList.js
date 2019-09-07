@@ -1,5 +1,12 @@
-
+/*history
+v1.0 make
+v1.2 coded
+v1.6 window.open
+v1.7 bugfix window.open issue
+*/
 ;(function(root){
+ let VER='gistList v1.7'
+ 
  //console.log('in')
  if(!document.body.dataset.scroll){
   let el=document.createElement('style')
@@ -8,7 +15,6 @@
   document.body.dataset.scroll='true';  
  }
  //console.log('a')
-
  let css=`
 body{
 background:%%bg%%;
@@ -301,7 +307,7 @@ ${title}</li>
    fn.q('.upd',n).onclick=upd;
    fn.a2(n,board)   
   }
-  console.log('gistList v1.5')
+  console.log(VER)
   scroll(o.bgcolor,o.color)//v1.3
   localStorage.setItem(o.opt,JSON.stringify(opt)) //v1.2
   init();
