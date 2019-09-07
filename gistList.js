@@ -5,7 +5,6 @@ v1.6 window.open
 v1.7 bugfix window.open issue
 */
 ;(function(root){
- let VER='gistList v1.75'
  
  //console.log('in')
  if(!document.body.dataset.scroll){
@@ -308,7 +307,7 @@ ${title}</li>
    fn.q('.upd',n).onclick=upd;
    fn.a2(n,board)   
   }
-  console.log(VER)
+  console.log('gistList v1.75')
   scroll(o.bgcolor,o.color)//v1.3
   localStorage.setItem(o.opt,JSON.stringify(opt)) //v1.2
   init();
