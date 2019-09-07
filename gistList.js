@@ -5,7 +5,7 @@ v1.6 window.open
 v1.7 bugfix window.open issue
 */
 ;(function(root){
- let VER='gistList v1.7'
+ let VER='gistList v1.75'
  
  //console.log('in')
  if(!document.body.dataset.scroll){
@@ -265,7 +265,8 @@ ${title}</li>
   ,to=getTogist(o.u,localStorage.getItem(o.p))
   ,caller=(e)=>{
    let url=`${o.url}?id=${e.target.id}&opt=${o.opt}`
-   if(o.blank)?window.open(url,'_blank'):window.location=url //bugfix
+   ;
+   (o.blank)?window.open(url,'_blank'):window.location=url //bugfix
   }
   ,board=fn.i3('<ol class="index"></ol>')
 //  ,n=fn.i3(`<li style="order:1" ><label class="new">NEW </label><label class="upd">UPDATE</label></li>`)
