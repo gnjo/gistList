@@ -257,7 +257,10 @@ ${title}</li>
   let o=Object.assign({},{sub:'',main:'',u:'',p:'',url:'',max:50,opt:'',blank:false,color:'#456',bgcolor:'#000'},opt)  
   ,plane=fn.q(_tar)||document.body
   ,to=getTogist(o.u,localStorage.getItem(o.p))
-  ,caller=(e)=>window.open(`${o.url}?id=${e.target.id}&opt=${o.opt}`,o.blank?'_blank':void 0)
+  ,caller=(e)=>{
+   let url=`${o.url}?id=${e.target.id}&opt=${o.opt}`
+   if(o.blank)?window.open(url,'_blank'):window.location=url //bugfix
+  }
   ,board=fn.i3('<ol class="index"></ol>')
 //  ,n=fn.i3(`<li style="order:1" ><label class="new">NEW </label><label class="upd">UPDATE</label></li>`)
   ,n=fn.i3(`<div style="order:1;" ><li class="new">NEW </li><li class="upd">UPDATE</li></div>`)
