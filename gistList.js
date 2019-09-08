@@ -243,6 +243,7 @@ ol,li{list-style:none;}
  }
  ;
  function lay(obj,file){
+  console.log(obj,file)
   let fu=Date.now() + 25*3600
   let order =fu - new Date(obj.updated_at).getTime()
   ,size=fn.pad(obj.files[file].size,7)
