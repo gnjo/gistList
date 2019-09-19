@@ -3,6 +3,7 @@ v1.0 make
 v1.2 coded
 v1.6 window.open
 v1.7 bugfix window.open issue
+v1.8 bugfix file size issue
 */
 ;(function(root){
  
@@ -243,10 +244,10 @@ ol,li{list-style:none;}
  }
  ;
  function lay(obj,file){
-  console.log(obj,file)
+  //console.log(obj,file)
   let fu=Date.now() + 25*3600
   let order =fu - new Date(obj.updated_at).getTime()
-  ,size=fn.pad(obj.files[file].size,7)
+  ,size=(obj.files[file])?fn.pad(obj.files[file].size,7):fn.pad(0,7)
   ,line=fn.pad(Math.ceil(parseInt(size)/(3*42*0.5)),4)
   ,title=fn.lex(obj.description).t
   ,updated=fn.jpTime( new Date(obj.updated_at).getTime() )
