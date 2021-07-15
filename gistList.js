@@ -261,7 +261,7 @@ ${title}</li>
  ;
 
  function entry(_tar,opt){
-  let o=Object.assign({},{sub:'',main:'',u:'',p:'',url:'',max:50,opt:'',blank:false,color:'#456',bgcolor:'#000'},opt)  
+  let o=Object.assign({},{sub:'',main:'',u:'',p:'',url:'',max:50,opt:'',blank:false,color:'#ace',bgcolor:'#000'},opt)  
   ,plane=fn.q(_tar)||document.body
   ,to=getTogist(o.u,localStorage.getItem(o.p))
   ,caller=(e)=>{
