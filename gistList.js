@@ -315,9 +315,10 @@ ${title}</li>
    fn.empty(board)
    fn.q('.new',n).onclick=ne;
    fn.q('.upd',n).onclick=upd;
+   fn.q('.wipe',n).onclick=wipe;   
    fn.a2(n,board)   
   }
-  console.log('gistList v1.75')
+  console.log('gistList v1.80')
   scroll(o.bgcolor,o.color)//v1.3
   localStorage.setItem(o.opt,JSON.stringify(opt)) //v1.2
   init();
