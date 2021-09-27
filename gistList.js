@@ -196,6 +196,9 @@ fn.i3=(d)=>{
  el=void 0;
  return me
 }
+
+fn.qa=(s,doc=document)=>{return [].slice.call(doc.querySelectorAll(s))}
+
 fn.a2=function(me,p){p.appendChild(me);return me}
 fn.pad=(d,l)=>('000000000000000000'+d).slice(-1*l)
 fn.lex=(str)=>{
@@ -271,7 +274,8 @@ ${title}</li>
   }
   ,board=fn.i3('<ol class="index"></ol>')
 //  ,n=fn.i3(`<li style="order:1" ><label class="new">NEW </label><label class="upd">UPDATE</label></li>`)
-  ,n=fn.i3(`<div style="order:1;" ><li class="new">NEW </li><li class="upd">UPDATE</li></div>`)
+//  ,n=fn.i3(`<div style="order:1;" ><li class="new">NEW </li><li class="upd">UPDATE</li></div>`)
+  ,n=fn.i3(`<div style="order:1;" ><li class="new">NEW </li><li class="upd">UPDATE</li><li class="wipe">WIPE</li></div>`)  
   ,ne=async()=>{
    let str='＃＊新規'
    let a=await to.togist(str,void 0,o.main,str)
@@ -283,6 +287,10 @@ ${title}</li>
    ;el.onclick=caller//bug fix
    fn.a2(el,board)
    ;a=b=c=void 0;
+  }
+  ,wipe=()=>{
+   //new
+   fn.qa('.gistid').filter(d=> parseInt(d.getAttribute('line'))<200).map(d=>d.style.display='none');
   }
   ,upd=async()=>{
    init();//
